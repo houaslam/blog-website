@@ -3,14 +3,14 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <main>
+    <main class="content">
         <% if (blogs.length > 0) {%>
             <%blogs.forEach(blog => { %>
-                <div class="blog">
-                    <h2><%= blog.title %></h2>
-                    <h3><%= blog.snippet %></h3>
-                    <p><%= blog.body%></p>
-                </div>
+                <a href="/blogs/<%= blog._id %>" class="blog">
+                    <h2 class="blog--title"><%= blog.title %></h2>
+                    <!-- <h3 class="blog--snippet"><%= blog.snippet %></h3> -->
+                    <p  class="blog--body"> <%= blog.body%></p>
+                </a>
             <% }) %>
         <% } else { %>
             <p>no Blog was created...</p>
