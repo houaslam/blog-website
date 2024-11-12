@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head.ejs') %>
+    <%- include('../partials/head.ejs') %>
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
     <main class="content details">
         <div class="blog">
             <h2 class="blog--title"><%= blog.title %></h2>
@@ -14,7 +14,7 @@
             <a data-doc="<%= blog._id %>" id="delete--button">Delete</a>
         </div>
     </main>
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 
     <script>
         let deleteBtn = document.getElementById('delete--button')
