@@ -29,10 +29,9 @@ const blog_details = (req, res)=>{
         .then(result=>{
             res.render('blogs/details', {title : 'details', blog : result})
         })
-    .catch((err)=>console.log(err))
+    .catch((err)=>res.status(404).render('404', {title : 'Blog not found'}))
 
 }
-
 
 const blog_delete = (req, res)=>{
     const id = req.params.id
@@ -43,10 +42,15 @@ const blog_delete = (req, res)=>{
     .catch((err)=>console.log(err))
 }
 
+const blog_update = (req, res) =>{
+    console.log('update')
+}
+
 module.exports = {
     blog_index , 
     blog_create_post,
     blog_create_get ,
     blog_delete,
-    blog_details
+    blog_details,
+    blog_update
 }

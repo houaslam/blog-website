@@ -18,6 +18,7 @@
 
     <script>
         let deleteBtn = document.getElementById('delete--button')
+        let editBtn = document.getElementById('edit--button')
 
         deleteBtn.addEventListener('click', ()=>{
             console.log('CLICKE')
@@ -28,6 +29,17 @@
             .then((data) => window.location.href = data.redirect)
             .catch(err => console.log(err))
         })
+
+        editBtn.addEventListener('click', ()=>{
+            console.log('CLICKE')
+            fetch(`/blogs/${editBtn.dataset.doc}`, {
+                method : 'PUT'
+            })
+            .then((response)=>response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch(err => console.log(err))
+        })
+
 
     </script>
 </body>
